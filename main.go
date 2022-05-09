@@ -15,6 +15,9 @@ func main() {
 	case "array": // 数组
 		controllers.RunArray()
 		break
+	case "slice":
+		controllers.RunSlice()
+		break
 	}
 
 }
