@@ -18,6 +18,9 @@ func main() {
 	case "slice":
 		controllers.RunSlice()
 		break
+	case "map":
+		controllers.MapSlice()
+		break
 	}
 
 }
