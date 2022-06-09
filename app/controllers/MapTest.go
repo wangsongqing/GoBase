@@ -1,7 +1,9 @@
 package controllers
 
 import (
+	"database/sql"
 	"fmt"
+	_ "github.com/lib/pq"
 )
 
 type Stu struct {
@@ -103,4 +105,33 @@ func statusMap6() {
 // map排序
 func statusMap7() {
 	//map1 := map[]
+	db, _ := sql.Open("postgres", "user=postgres password=root dbname=paypal sslmode=disable")
+
+	////插入数据
+	//stmt, err1 := db.Prepare("INSERT INTO userinfo(username,departname,created) VALUES($1,$2,$3) RETURNING uid")
+	//fmt.Println(err1)
+	//res, err2 := stmt.Exec("astaxie", "研发部门", "2012-12-09")
+	//fmt.Println(err2)
+	////pg不支持这个函数，因为他没有类似MySQL的自增ID
+	//id, err3 := res.LastInsertId()
+	//
+	//fmt.Println(err3)
+	//fmt.Println(id)
+
+	//查询数据
+	rows, err := db.Query("SELECT * FROM userinfo")
+
+	for rows.Next() {
+		var uid int
+		var username string
+		var department string
+		var created string
+		err = rows.Scan(&uid, &username, &department, &created)
+		fmt.Println(uid)
+		fmt.Println(username)
+		fmt.Println(department)
+		fmt.Println(created)
+	}
+
+	fmt.Println(err)
 }
