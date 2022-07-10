@@ -5,8 +5,8 @@ import (
 	"flag"
 )
 
+// 程序执行  go run main.go --controllerName=time
 func main() {
-
 	controllerName := flag.String("controllerName", "", "")
 
 	flag.Parse()
@@ -21,6 +21,8 @@ func main() {
 	case "map":
 		controllers.MapSlice()
 		break
+	case "time":
+		controllers.TimeTest()
 	}
 
 }
