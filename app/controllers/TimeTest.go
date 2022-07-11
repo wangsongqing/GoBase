@@ -8,7 +8,9 @@ import (
 func TimeTest() {
 	// time.Millisecond * 1000 = 1s
 	// getTime()
-	getNowTime()
+	// getNowTime()
+	// sleepTimeData()
+	RandRoom()
 }
 
 func getNowTime() {
@@ -25,10 +27,37 @@ func getNowTime() {
 	nowTime1 := fmt.Sprintf("date:%v", now.Format("2006-01-02 15:04:05"))
 	fmt.Println(nowTime1)
 }
+
 func getTime() {
 	for {
 		var now = time.Now()
 		fmt.Printf("time:%v, type:%T \n", now, now)
 		time.Sleep(time.Millisecond * 1000)
 	}
+}
+
+func sleepTimeData() {
+	// time.Second = 1s
+	i := 0
+	for {
+		i++
+		if i == 10 {
+			break
+		}
+		fmt.Println(i)
+		time.Sleep(time.Second * 2)
+	}
+}
+
+// RandRoom 随机数
+func RandRoom() {
+	//now := time.Now()
+	initTime := time.Now().UnixMilli()
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+		time.Sleep(time.Second)
+	}
+	initTime1 := time.Now().UnixMilli()
+
+	fmt.Printf("耗费时间:%vs", initTime1-initTime)
 }

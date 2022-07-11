@@ -23,6 +23,8 @@ func main() {
 		break
 	case "time":
 		controllers.TimeTest()
+	case "struct":
+		controllers.StructTest()
 	}
 
 }
