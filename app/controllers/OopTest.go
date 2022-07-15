@@ -46,7 +46,10 @@ func OopTest() {
 // 继承
 func testoop6() {
 	user := models.SmallStudent{}
+	user.SetSla(88.88)
 	user.Name = "jimmy"
+	user.MathScore = 23.45
+	user.GetInfo() // 方法也可以继承
 	fmt.Println(user)
 }
 
