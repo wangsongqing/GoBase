@@ -25,6 +25,10 @@ func main() {
 		controllers.TimeTest()
 	case "struct":
 		controllers.StructTest()
+	case "structfun":
+		controllers.FunStructTest()
+	case "ooptest":
+		controllers.OopTest()
 	}
 
 }
