@@ -29,6 +29,8 @@ func main() {
 		controllers.FunStructTest()
 	case "ooptest":
 		controllers.OopTest()
+	case "interface":
+		controllers.InterfaceTest()
 	}
 
 }
