@@ -35,7 +35,8 @@ func stateSlice11() {
 		{"alan", 60},
 		{"hikerell", 91},
 		{"acmfly", 96},
-		{"leao", 90}}
+		{"leao", 90},
+	}
 
 	// fmt.Println("Default:")
 	//原始顺序

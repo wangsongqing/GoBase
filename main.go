@@ -31,6 +31,10 @@ func main() {
 		controllers.OopTest()
 	case "interface":
 		controllers.InterfaceTest()
+	case "file":
+		controllers.TestFiles()
+	case "json":
+		controllers.JsonTest()
 	}
 
 }
