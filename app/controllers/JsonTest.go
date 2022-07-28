@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"GoBase/app/pkg/helpers"
 	"encoding/json"
 	"fmt"
 )
@@ -15,7 +16,7 @@ func JsonTest() {
 	// JsonTest1()
 	// JsonTest2()
 	// JsonTest3()
-	//JsonTest4()
+	// JsonTest4()
 	// JsonTest5()
 	JsonTest6()
 }
@@ -23,8 +24,9 @@ func JsonTest() {
 // JsonTest6 反序列化 slice
 func JsonTest6() {
 	var man1 []string
-	str := "[\"林冲\",\"杨志\"]"
-	err := json.Unmarshal([]byte(str), &man1)
+	str := "[\"林冲\",\"杨志\", \"武松\"]"
+	//err := json.Unmarshal([]byte(str), &man1)
+	err := helpers.JsonDecode(str, &man1)
 	if err != nil {
 		fmt.Println("反序列化失败")
 		return
@@ -82,7 +84,7 @@ func JsonTest2() {
 
 	var a1 map[string]string
 	a1 = make(map[string]string, 1)
-	a1["name"] = "宋江"
+	a1["name"] = "宋江大哥"
 	a1["age"] = "42"
 
 	a2 := map[string]string{"name": "无用", "age": "21"}
@@ -91,7 +93,7 @@ func JsonTest2() {
 	man = make(map[int]interface{})
 	man[0] = a1
 	man[1] = a2
-	data, _ := json.Marshal(man)
+	data, _ := helpers.JsonEncode(man)
 	fmt.Println(string(data))
 }
 

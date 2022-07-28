@@ -2,6 +2,7 @@ package helpers
 
 import (
 	"bufio"
+	"encoding/json"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -106,4 +107,20 @@ func WriteFile(fileName string, content string) (bool, error) {
 	}
 
 	return true, nil
+}
+
+// JsonEncode 序列化json
+func JsonEncode(jsonData interface{}) ([]byte, error) {
+	data, err := json.Marshal(jsonData)
+	if err != nil {
+		var data []byte
+		return data, err
+	}
+	return data, err
+}
+
+// JsonDecode 反系列化
+func JsonDecode(jsonData string, v any) error {
+	err := json.Unmarshal([]byte(jsonData), &v)
+	return err
 }
