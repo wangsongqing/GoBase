@@ -35,6 +35,10 @@ func main() {
 		controllers.TestFiles()
 	case "json":
 		controllers.JsonTest()
+	case "goroutine":
+		controllers.GoroutineTest()
+	case "channel":
+		controllers.ChannelTest()
 	}
 
 }
