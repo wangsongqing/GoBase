@@ -39,6 +39,8 @@ func main() {
 		controllers.GoroutineTest()
 	case "channel":
 		controllers.ChannelTest()
+	case "string":
+		controllers.StringTest()
 	}
 
 }
