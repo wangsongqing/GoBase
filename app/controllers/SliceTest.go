@@ -19,7 +19,8 @@ func RunSlice() {
 	//stateSlice9()
 	//stateSlice10()
 	//stateSlice11()
-	stateSlice12()
+	//stateSlice12()
+	stateSlice13()
 }
 
 func stateSlice1(x []int) {
@@ -135,4 +136,11 @@ func stateSlice12() {
 	arr := []int{11, 22, 44, 6}
 	intKey := helpers.BinaryFind(arr, 111)
 	fmt.Println("intKey", intKey)
+}
+
+func stateSlice13() {
+	a := make([]interface{}, 1)
+	a[0] = 111
+	a[1] = "222"
+	fmt.Println(a)
 }

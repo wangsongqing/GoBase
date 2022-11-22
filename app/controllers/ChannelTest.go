@@ -13,7 +13,22 @@ func ChannelTest() {
 	// ChannelTest1()
 	// ChannelTest2()
 	// ChannelTest3()
-	ChannelTest4()
+	//ChannelTest4()
+	ChannelTest5()
+}
+
+func ChannelTest5() {
+	chan1 := make(chan string, 5)
+	chan1 <- "aaa"
+	chan1 <- "bbb"
+
+	//signal.Notify()
+	for {
+		select {
+		case v := <-chan1:
+			fmt.Printf("v:%v \n", v)
+		}
+	}
 }
 
 func ChannelWrite(Channles1 chan int) {

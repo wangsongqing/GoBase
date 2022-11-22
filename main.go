@@ -41,6 +41,8 @@ func main() {
 		controllers.ChannelTest()
 	case "string":
 		controllers.StringTest()
+	case "fun":
+		controllers.FuncTest()
 	}
 
 }

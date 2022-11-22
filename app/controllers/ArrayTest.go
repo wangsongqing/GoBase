@@ -10,7 +10,20 @@ func RunArray() {
 
 	// arr := [3]int{1, 4, 6}
 	// state4(&arr)
-	state5()
+	//state5()
+	state6()
+}
+
+func state6() {
+	a := [2]int{1, 2}
+	b := [...]int{1, 2, 3, 4, 5}
+	var c [3]int
+	c[0] = 1
+	c[1] = 2
+	c[2] = 3
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(c)
 }
 
 // 定义数组1
