@@ -43,6 +43,10 @@ func main() {
 		controllers.StringTest()
 	case "fun":
 		controllers.FuncTest()
+		break
+	case "defer":
+		controllers.DeferTest()
+		break
 	}
 
 }

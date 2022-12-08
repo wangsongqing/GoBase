@@ -21,6 +21,7 @@ func RunSlice() {
 	//stateSlice11()
 	//stateSlice12()
 	stateSlice13()
+	//stateSlice14()
 }
 
 func stateSlice1(x []int) {
@@ -139,8 +140,17 @@ func stateSlice12() {
 }
 
 func stateSlice13() {
-	a := make([]interface{}, 1)
+	a := make([]interface{}, 2)
 	a[0] = 111
 	a[1] = "222"
-	fmt.Println(a)
+	slice1 := append(a, "333", "444")
+	fmt.Printf("a[0] type is %T \n", a[0])
+	fmt.Printf("a[1] type is %T \n", a[1])
+	fmt.Println(slice1)
+}
+
+func stateSlice14() {
+	slice := make([]string, 2)
+	slice[0] = "111"
+	fmt.Println(slice)
 }
